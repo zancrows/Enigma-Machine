@@ -147,7 +147,7 @@ class Enigma:
                 if self.notch != self.position:
                     stepping = False
                 self.position = (self.position + 1) % 26
-            elif cnx != "exit" and self.notch == self.position:
+            elif cnx != "exit" and self.notch == self.position and isinstance(self.targets[cnx], Enigma.Rotor):
                 self.position = (self.position + 1) % 26
                 stepping = True
             
