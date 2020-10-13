@@ -157,7 +157,7 @@ class Enigma:
                 wired_char = self.alphabet[tuple(self.rotor_charsets[(self.position - self.ring) % 26]).index(char)]
             
             Enigma.log += (
-                f"[+] {self.num:3}, {cnx:5} -> {int2char(wired_char)}, {''.join(list_int2char(self.rotor_charsets[self.position]))}"
+                f"[+] {self.num:3}, {cnx:5} -> {int2char(wired_char)}, {''.join(list_int2char(self.rotor_charsets[self.position - self.ring]))}"
                 f", position: {int2char(self.position)}\n"
                 )
             self.targets[cnx].send((cnx, wired_char, stepping))
